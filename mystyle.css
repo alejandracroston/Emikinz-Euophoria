@@ -1,0 +1,989 @@
+/* Emikinz Euphoria */
+
+/* Color Palette */
+:root {
+    --deep-plum: #392653;
+    --royal-purple: #512B81;
+    --medium-purple: #8752bd;
+    --soft-violet: #B58ae8;
+    --light-lavender: #e9ddf8;
+    --pale-lavender: #f8f5ff;
+    --soft-white: #fffcff;
+    --body-text: #45384d;
+    --muted-text: #79658f;
+    --border-color: #dcc9f5;
+}
+
+/* Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--soft-white);
+    color: var(--body-text);
+    font-family: "Quantico", sans-serif;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--medium-purple);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--royal-purple);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Lora", serif;
+    color: var(--deep-plum);
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 5vw, 4.7rem);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--muted-text);
+}
+
+
+
+/* Navigation */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    padding: 10px 15px;
+}
+.site-navbar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    padding: 10px 15px;
+    background-color: var(--soft-white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-name {
+    display: inline-block;
+    margin: 0;
+    font-family: "Quantico", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--deep-plum);
+    white-space: nowrap;
+}
+
+.brand-name span, 
+.footer-brand span {
+    color: var(--medium-purple);
+}
+
+.nav-item {
+    margin: 30px 0;
+}
+
+
+.site-navbar .nav {
+    display: flex;
+    row-gap: 4px;
+}
+
+.site-navbar .nav-link {
+    padding: 9px 12px;
+    color: var(--body-text);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
+    color: var(--medium-purple);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 85px 0;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(181, 138. 232, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #f8f5ff 0%,
+            #f1e8fb 100%
+        );
+}
+
+.hero-copy{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    animation: fadeIp 0.8s ease both;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: var(--medium-purple);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-copy h1 span,
+.intro-section h2 span,
+.section-heading h2 span,
+.closing-section h2 span {
+    color: var(--medium-purple);
+}
+
+.hero-description {
+    max-width: 540px;
+    margin-top: 25px;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.btn-purple {
+    display: inline-block;
+    padding: 13px 24px;
+    border: 1px solid var(--royal-purple);
+    border-radius: 4px;
+    background-color: var(--royal-purple);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3 ease,
+        bow-shadow 0.3 ease;
+}
+
+.btn-purple:hover {
+    background-color: var(--deep-plum);
+    border-color: var(--deep-plum);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgna (57, 38, 83, 0.16);
+}
+
+.hero-text-link {
+    display: inline-block;
+    margin-left: 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Hero Visual Placeholder */
+
+.hero-visual-column {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    animation: fadeUp 1s ease both;
+}
+
+.hero-visual {
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 16px;
+    border: 1px solid rgba(181, 138, 232, 0.5);
+    background-color: rgba(255, 252, 255, 0.8);
+    box-shadow: 0 20px 50px rgba(57, 38, 83, 0.1);
+}
+
+.photo-placeholder { 
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 255, 255, 0.95),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #E9DDFB,
+            #D7C0F0,
+            #F5ECFB
+        );
+}
+
+.placeholder-decoration {
+    margin-bottom: 15px;
+    color: var(--royal-purple);
+    font-size: 5rem;
+    line-height: 1.2;
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.placeholder-title {
+    margin-bottom: 8px;
+    color: var(--deep-plum);
+    font-family: "Lora", serif;
+    font-size: 1.7rem;
+}
+
+.placeholder-caption {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.photo-caption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 4px 2px;
+    color: var(--royal-purple);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Shared Section Spacing */
+.section-padding {
+    padding: 85px 0;
+}
+
+.intro-section {
+    background-color: var(--soft-white);
+}
+
+.intro-section h2 {
+    margin-bottom: 20px;
+}
+
+.intro-description {
+    max-width: 760px; 
+    margin: 0 auto;
+    font-size: 1.03rem;
+    line-height: 1.9;
+}
+
+/* Closing Section */
+.closing-section {
+    padding: 85px 0;
+    background: 
+        radial-gardient(
+            circle at 15% 20%,
+            rgba(181, 138, 232, 0.2),
+            transparent 35%
+        ),
+        var(--deep-plum);
+}
+
+.closing-section .eyebrow {
+    color: var(--light-lavender);
+}
+
+.closing-section h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.closing-section h2 span {
+    color: var(--light-lavender);
+}
+
+.closing-section p:not(.eyebrow) {
+    color: #e7ddf0;
+}
+
+.btn-light-purple {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 25px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: var(--deep-plum);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-light-purple:hover {
+    background-color: var(--light-lavender);
+    border-color:var(--light-lavender);
+    color: var(--deep-plum);
+    transform: translateY(-3px);
+}
+
+/* Footer Section */
+.site-footer {
+    padding: 35px 0;
+    background-color: #f0e7f8;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-brand {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--deep-plum);
+    font-family: "Lora", serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.site-footer p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+}
+
+.copyright {
+    color: var(--deep-plum);
+}
+
+.footer-note {
+    margin-top: 4px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transformation: translateY(-8px);
+    }
+}
+
+/*  Tablet and Mobile */
+
+@media (max-width: 991.98px) {
+    .site-navbar {
+        padding: 15px 0 10px;
+    }
+
+    .site-navbar .nav {
+        margin-top: 10px;
+    }
+
+    .site-navbar .nav-link {
+        padding: 7px 10px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-visual {
+        margin-top: 20px;
+    }
+
+    .photo-placeholder {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 2.65rem;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+    }
+
+    .brand-name {
+        font-size: 1.35rem;
+    }
+
+    .site-navbar .nav-link {
+        padding: 7px 8px;
+        font-size: 0.82rem;
+    }
+
+    .hero-section {
+        padding: 48px 0;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+    }
+
+    .hero-text-link {
+        margin-left: 10px;
+    }
+
+    .photo-placeholder {
+        min-height: 280px;
+        padding: 20px;
+    }
+
+    .placeholder-decoration {
+        font-size: 4rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .occasion-card {
+        padding: 26px 22px;
+    }
+
+    .closing-section {
+        padding: 65px 0;
+    }
+
+    .site-footer {
+        padding: 28px 0;
+    }
+
+    .site-footer .col-12 + .col-12 {
+        margin-top: 22px;
+    }
+}
+
+
+/* Respect Reduced Motion Settings */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Page Width Test */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+.site-footer {
+    width: 100%;
+}
+
+.hero-section,
+.intro-section,
+.occasion-section,
+.closing-section {
+    width: 100%;
+}
+
+/* About Page Section */
+.about-banner {
+    padding: 75px 20px;
+    background: linear-gradient(
+        120deg,
+        #f8f5ff,
+        #e9ddfb
+    );
+}
+
+.about-banner h1 {
+    margin-bottom: 15px;
+}
+
+.about-banner h1 span {
+    color: var(--medium-purple);
+}
+
+.about-banner p:last-child {
+    margin-bottom: 0;
+}
+
+/* About Story for Emily-Ann */
+.about-story {
+    background-color: var(--soft-white);
+}
+
+.about-photo-frame {
+    padding: 12px;
+    background-color: var(--light-lavender);
+    border: 1px solid var(--soft-violet);
+    box-shadow: 0 12px 30px rgba(57, 38, 83, 0.12);
+}
+
+.about-photo {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+}
+
+.about-photo-caption {
+    padding: 15px 5px 5px;
+    text-align: center;
+    color: var(--deep-plum);
+    font-family: "Quantico", sans-serif;
+    font-size: 1.1rem;
+}
+
+/* About Stort Text */
+.about-story-text {
+    padding: 25px 35px;
+}
+
+.about-story-text h2 {
+    margin-bottom: 22px;
+}
+
+.about-story-text h2 span {
+    color: var(--medium-purple);
+}
+
+.about-story-text p:not(.eyebrow) {
+    margin-bottom: 17px;
+    font-size: 0.98rem;
+    line-height: 1.9;
+}
+
+/* Emily-Ann's Signature */
+.about-signature {
+    margin-top: 25px;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.about-signature span {
+    display: block;
+    margin-top: 5px;
+    color: var(--royal-purple);
+    font-family: "Lora", serif;
+    font-size: 1.5rem;
+}
+
+/* About Page Closing */
+.about-closing {
+    padding: 75px 0;
+    background: var(--pale-lavender);
+}
+
+.about-closing h2 {
+    margin-bottom: 18px;
+}
+
+.about-closing h2 span {
+    color: var(--medium-purple);
+}
+
+.about-closing p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* About Page Mobile Style Design */
+
+@media (max-width: 991.98px) {
+    .about-photo {
+        height: 400px;
+    }
+
+    .about-story-text {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-banner {
+        padding: 55px 15px;
+    }
+
+    .about-photo {
+        height: 350px;
+    }
+
+    .about-story {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .about-closing {
+        padding: 55px 15px;
+    }
+}
+
+/* History Page Section */
+.history.banner {
+    padding: 75px 20px;
+    background: linear-gradient(
+        120deg,
+        #f8f5ff,
+        #e9ddfb
+    );
+}
+
+.history.banner h1 {
+    margin-bottom: 15px;
+}
+
+.history.banner h1 span {
+    color: var(--medium-purple);
+}
+
+.history.banner p:last-child {
+    margin-bottom: 0;
+}
+
+/* History Page Of Emily-Ann */
+.history-page {
+    background-color: var(--soft-white);
+}
+
+.history-photo-frame {
+    padding: 12px;
+    background-color: var(--light-lavender);
+    border: 1px solid var(--soft-violet);
+    box-shadow: 0 12px 30px rgba(57, 38, 83, 0.12);
+}
+
+.history-page {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+}
+
+.history-photo-caption {
+    padding: 15px 5px 5px;
+    text-align: center;
+    color: var(--deep-plum);
+    font-family: "Quantico", sans-serif;
+    font-size: 1.1rem;
+}
+
+/* History Page Text */
+.history-page {
+    padding: 25px 35px;
+}
+
+.history-page h2 {
+    margin-bottom: 22px;
+}
+
+.history-page h2 span {
+    color: var(--medium-purple);
+}
+
+.history-page p:not(.eyebrow) {
+    margin-bottom: 17px;
+    font-size: 0.98rem;
+    line-height: 1.9;
+}
+
+/* History Page Mobile Style Design */
+
+@media (max-width: 991.98px) {
+    .history-photo {
+        height: 400px;
+    }
+
+    .history-page-text {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .history-banner {
+        padding: 55px 15px;
+    }
+
+    .history-photo {
+        height: 350px;
+    }
+
+    .history-page {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/* Shop Page Section */
+.shop-banner {
+    padding: 75px 20px;
+    background: linear-gradient(
+        120deg,
+        #f8f5ff,
+        #e9ddf8
+    );
+}
+
+.shop-banner h1 {
+    margin-bottom: 15px;
+}
+
+.shop-banner h1 span {
+    color: var(--medium-purple);
+}
+
+.shop-banner p:last-child {
+    margin-bottom: 0;
+}
+
+/*Shop Introduction */
+.shop-products {
+    background-color: var(--soft-white);
+}
+
+.shop-heading {
+    margin-bottom: 35px;
+}
+
+.shop-heading h2 span {
+    color: var(--medium-purple);
+}
+
+/* Product Cards */
+.shop-card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(57, 38, 83, 0.08);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(57, 38, 83, 0.14);
+}
+
+/* Product Photos */
+.shop-product-image {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    background-color: var(--pale-lavender);
+}
+
+.shop-card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    height: calc(100% - 340px);
+}
+
+.product-category {
+    margin-bottom: 8px;
+    color: var(--medium-purple);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.shop-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.product-price {
+    margin-bottom: 15px;
+    color: var(--royal-purple);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.product-description {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Product Symbolism */
+.product-meaning {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    padding: 17px;
+    border-left: 3px solid var(--soft-violet);
+    background-color: var(--pale-lavender);
+}
+
+.product-meaning h4 {
+    margin-bottom: 8px;
+    color: var(--royal-purple);
+    font-family: "Quantico", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.product-meaning p {
+    margin-bottom: 0;
+    font-size: 0.87rem;
+    line-height: 1.7;
+}
+
+/* Buy Button */
+.buy-button {
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+}
+
+/* Order Information */
+.order-information {
+    padding: 80px 20px;
+    background-color: var(--pale-lavender);
+}
+
+.order-information h2 {
+    margin-bottom: 18px;
+}
+
+.order-information h2 {
+    margin-bottom: 18px;
+}
+
+.order-information h2 span{
+    color: var(--medium-purple);
+}
+
+.order-information .container > p:not(.eyebrow) {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.9;
+}
+
+.order-note {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* SHOP MOBILE RESPONSIVENESS */
+
+@media (max-width: 767.98px) {
+
+    .shop-banner {
+        padding: 55px 15px;
+    }
+
+    .shop-product-image {
+        height: 300px;
+    }
+
+    .shop-card-body {
+        height: auto;
+        min-height: 0;
+    }
+
+    .shop-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .order-information {
+        padding: 60px 15px;
+    }
+}
+
+/* Logo And Nav Brand */
+.site-navbar .navbar-brand.brand-name {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.site-navbar .brand-text {
+    font-family: "Quantico", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #512B81;
+}
+
+@media (max-width: 575px) {
+    .navbar-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .site-navbar .brand-text {
+        font-size: 1.1rem;
+    }
+}
