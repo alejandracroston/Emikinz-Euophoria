@@ -198,7 +198,7 @@ p {
     transition:
         background-color 0.3s ease,
         transform 0.3 ease,
-        bow-shadow 0.3 ease;
+        box-shadow 0.3 ease;
 }
 
 .btn-purple:hover {
@@ -206,7 +206,7 @@ p {
     border-color: var(--deep-plum);
     color: #ffffff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgna (57, 38, 83, 0.16);
+    box-shadow: 0 8px 20px rgba(57, 38, 83, 0.16);
 }
 
 .hero-text-link {
@@ -361,31 +361,55 @@ p {
 
 /* Footer Section */
 .site-footer {
-    padding: 35px 0;
-    background-color: #f0e7f8;
-    border-top: 1px solid var(--border-color);
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    padding: 40px 0;
+    background-color: #f8c5dd !important;
+    border-top: 4px solid #E98ABB;
 }
 
 .footer-brand {
     display: inline-block;
     margin-bottom: 7px;
-    color: var(--deep-plum);
+    color: #392653;
     font-family: "Lora", serif;
     font-size: 1.35rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
+.footer-brand span {
+    color: #D60087;
+}
 .site-footer p {
-    margin-bottom: 0;
-    font-size: 0.85rem;
+    color: #68436F;
 }
 
-.copyright {
-    color: var(--deep-plum);
+.site-footer .footer-brand {
+    color: #392653;
 }
 
-.footer-note {
+.site-footer .footer-brand span {
+    color: #D60087;
+}
+.site-footer .copyright {
+    color: #392653;
+    font-weight: 700;
+}
+
+.site-footer .footer-note {
     margin-top: 4px;
+    color: #8752BD;
+}
+
+@media (max-width: 575.98px) {
+    .site-footer {
+        padding: 28px 15px;
+    }
+
+    .site-footer .col-12 + .col-12 {
+        margin-top: 22px;
+    }
 }
 
 /* Animations */
@@ -694,6 +718,9 @@ body {
 
 /* History Page Of Emily-Ann */
 .history-page {
+    width: 100%;
+    height:auto;
+    padding: 65px 0;
     background-color: var(--soft-white);
 }
 
@@ -704,13 +731,41 @@ body {
     box-shadow: 0 12px 30px rgba(57, 38, 83, 0.12);
 }
 
-.history-page {
+.history-photo{
     display: block;
     width: 100%;
     height: 480px;
     object-fit: cover;
     object-position: center;
     border-radius: 2px;
+}
+
+.history-photo-caption {
+    padding: 15px 5px 5px;
+    text-align: center;
+    color: var(--deep-plum);
+    font-family: "Quantico", sans-serif;
+    font-size: 1.1rem;
+}
+
+/* History Page Text */
+.history-page-text {
+    height: auto;
+    padding: 25px 35px;
+}
+
+.history-page-text h2 {
+    margin-bottom: 22px;
+}
+
+.history-page-text h2 span {
+    color: var(--medium-purple)
+}
+
+.history-page-text p:not(.eyebrow) {
+    margin-bottom: 17px;
+    font-size: 0.98rem;
+    line-height: 1.9;
 }
 
 .history-photo-caption {
@@ -757,13 +812,20 @@ body {
         padding: 55px 15px;
     }
 
+    .history-page {
+        height: auto;
+        padding: 50px 0;
+    }
+
     .history-photo {
         height: 350px;
     }
 
-    .history-page {
-        padding-top: 50px;
-        padding-bottom: 50px;
+    .history-page-text {
+        padding: 25px 15px;
+    }
+    .about-closing {
+        padding: 55px 15px;
     }
 }
 
@@ -804,6 +866,8 @@ body {
 
 /* Product Cards */
 .shop-card {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     overflow: hidden;
     border: 1px solid var(--border-color);
@@ -831,9 +895,11 @@ body {
     background-color: var(--pale-lavender);
 }
 
+/* Product Information */
 .shop-card-body {
     display: flex;
     flex-direction: column;
+    flex: 1;
     padding: 25px;
     height: calc(100% - 340px);
 }
@@ -844,11 +910,12 @@ body {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .shop-card h3 {
     margin-bottom: 10px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .product-price {
@@ -869,39 +936,60 @@ body {
     margin-top: 12px;
     margin-bottom: 20px;
     padding: 17px;
-    border-left: 3px solid var(--soft-violet);
+    border-left: 4px solid var(--soft-violet);
     background-color: var(--pale-lavender);
 }
 
 .product-meaning h4 {
     margin-bottom: 8px;
     color: var(--royal-purple);
-    font-family: "Quantico", sans-serif;
-    font-size: 0.9rem;
+    font-family: "Lora", serif;
+    font-size: 1rem;
     font-weight: 700;
 }
 
 .product-meaning p {
     margin-bottom: 0;
+    color: var(--muted-text);
     font-size: 0.87rem;
     line-height: 1.7;
 }
 
-/* Buy Button */
-.buy-button {
+/* Book An Appointment Button */
+.btn-book {
+    display: block;
     width: 100%;
-    margin-top: auto;
+    margin-top:auto;
+    padding: 13px 20px;
+    background-color: #C5A3ED;
+    border: 1px solid #C5A3ED;
+    border-radius: 6px;
+    color: #392653;
+    font-family: "Quantico", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+    background-color: #A879D6;
+    border-color: #A879D6;
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(81, 43, 129, 0.16);
+}
+
+.btn-book:focus {
+    outline: 2px solid var(--royal-purple);
+    outline-offset: 3px;
 }
 
 /* Order Information */
 .order-information {
     padding: 80px 20px;
     background-color: var(--pale-lavender);
-}
-
-.order-information h2 {
-    margin-bottom: 18px;
 }
 
 .order-information h2 {
@@ -933,17 +1021,20 @@ body {
         padding: 55px 15px;
     }
 
+    .shop-prodcuts {
+        padding: 55px 0;
+    }
+
     .shop-product-image {
         height: 300px;
     }
 
     .shop-card-body {
-        height: auto;
-        min-height: 0;
+        padding: 20px;
     }
 
     .shop-card h3 {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .order-information {
@@ -986,4 +1077,76 @@ body {
     .site-navbar .brand-text {
         font-size: 1.1rem;
     }
+}
+
+/* Contact Page Section */
+.contact-banner {
+    background-color: var(--light-lavender);
+    padding: 65px 20px;
+    border-bottom: 4px solid var(--soft-violet);
+}
+
+.contact-banner h1 {
+    color: var(--royal-purple);
+    font-family: "Lora", serif;
+    font-size: 38px;
+}
+
+.contact-banner p {
+    color: var(--body-text);
+    margin-bottom: 0;
+}
+
+.contact-section {
+    background-color: var(--pale-lavender);
+}
+
+.contact-card {
+    background-color: var(--soft-white);
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(57, 38, 83, 0.10);
+}
+
+.contact-card h2 {
+    color: var(--royal-purple);
+    font-family: "Lora", serif;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: var(--muted-text);
+    margin-bottom: 25px;
+}
+
+.contact-card label {
+    color: var(--deep-plum0);
+    font-weight: bold;
+}
+
+.contact-card .form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    padding: 12px;
+    height: auto;
+}
+
+.contact-card .form-control:focus {
+    border-color: var(--medium-purple);
+    box-shadow: 0 0 5px rgba(135, 82, 189, 0.25);
+}
+
+.btn-contact {
+    background-color: #c5a3ed;
+    color: var(--deep-plum);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn-contact:hover {
+    background-color: #a879d6;
+    color: #ffffff;
 }
